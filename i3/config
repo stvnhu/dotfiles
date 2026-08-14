@@ -4,6 +4,8 @@
 # maim, xclip
 # JetBrainsMonoNL font
 
+set $mod Mod1
+
 # Added config
 
 set $i3dir ~/dotfiles/i3
@@ -14,10 +16,13 @@ exec_always --no-startup-id feh --bg-fill $i3dir/wallpaper.png
 # Screenshots with maim into clipboard
 bindsym Print exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
 
-# Super key push to talk
+# Push to talk
 exec_always --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ 1
 bindsym Super_L exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ 0 && paplay $i3dir/ptt-keydown.mp3
 bindsym --release Super_L exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ 1 && paplay $i3dir/ptt-keyup.mp3
+
+# Mute button
+bindsym $mod+m exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # Disable screen timeout
 exec_always --no-startup-id xset -dpms
@@ -28,8 +33,6 @@ hide_edge_borders both
 
 
 # Default config
-
-set $mod Mod1
 
 font pango:JetBrainsMonoNL Nerd Font 12
 
