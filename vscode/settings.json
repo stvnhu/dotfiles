@@ -1,25 +1,24 @@
 {
-    // VS Code
-    "update.mode": "none",
-    "extensions.autoUpdate": "off",
-    "extensions.autoCheckUpdates": false,
-    "telemetry.feedback.enabled": false,
-    "telemetry.telemetryLevel": "off",
-    "window.restoreWindows": "none",
-    // Editor
-    "editor.fontFamily": "JetBrainsMonoNL Nerd Font Mono",
-    "editor.fontSize": 16,
-    "editor.formatOnSave": true,
-    "editor.inlayHints.enabled": "off",
-    "editor.minimap.enabled": false,
-    // Disable AI
-    "chat.disableAIFeatures": true,
-    // Vim
-    "keyboard.dispatch": "keyCode",
-    "vim.smartRelativeLine": true,
-    "vim.hlsearch": true,
-    // Formatters
-    "[luau]": {
-        "editor.defaultFormatter": "JohnnyMorganz.stylua"
-    },
+  "update.mode": "none",
+  "extensions.autoUpdate": "off",
+  "extensions.autoCheckUpdates": false,
+  "telemetry.feedback.enabled": false,
+  "telemetry.telemetryLevel": "off",
+  "window.restoreWindows": "none",
+
+  "editor.fontFamily": "JetBrainsMonoNL Nerd Font Mono",
+  "editor.fontSize": 16,
+  "editor.formatOnSave": true,
+  "editor.inlayHints.enabled": "off",
+  "editor.minimap.enabled": false,
+
+  "chat.disableAIFeatures": true,
+
+  "keyboard.dispatch": "keyCode",
+  "vim.smartRelativeLine": true,
+  "vim.hlsearch": true,
+
+  "[luau]": {
+    "editor.defaultFormatter": "JohnnyMorganz.stylua"
+  }
 }
