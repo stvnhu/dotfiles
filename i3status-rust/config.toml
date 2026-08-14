@@ -1,0 +1,38 @@
+
+[[block]]
+block = "sound"
+device_kind = "source"
+format = " $icon $volume "
+show_volume_when_muted = true
+
+[[block]]
+block = "sound"
+device_kind = "sink"
+format = " $icon $volume "
+show_volume_when_muted = true
+
+[[block]]
+block = "net"
+format = " {$ipv6|<span foreground='#dc322f'>ipv6</span>} "
+
+[[block]]
+block = "net"
+format = " {$ip|<span foreground='#dc322f'>ipv4</span>} "
+
+[[block]]
+block = "battery"
+
+[[block]]
+block = "disk_space"
+
+[[block]]
+block = "cpu"
+
+[[block]]
+block = "memory"
+format = " $icon $mem_used_percents "
+
+[[block]]
+block = "time"
+interval = 1
+format = " $timestamp.datetime(f:'%A %Y-%m-%d %H:%M:%S')"
