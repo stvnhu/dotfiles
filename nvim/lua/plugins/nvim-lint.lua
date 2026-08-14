@@ -13,6 +13,8 @@ lint.linters_by_ft = {
 	-- c / c++
 	c = { "clangtidy" },
 	cpp = { "clangtidy" },
+	-- json
+	json = { "jsonlint" },
 	-- lua
 	lua = { "selene" },
 	-- nix

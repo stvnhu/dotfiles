@@ -30,6 +30,10 @@ mason_installer.setup({
 		-- c / c++
 		"clangd",
 		"clang-format",
+		-- json
+		"json-lsp",
+		"jsonlint",
+		"prettier",
 		-- lua
 		"lua-language-server",
 		"selene",

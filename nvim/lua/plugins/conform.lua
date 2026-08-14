@@ -18,6 +18,8 @@ conform.setup({
 		-- c / c++
 		c = { "clang-format" },
 		cpp = { "clang-format" },
+		-- json
+		json = { "prettier" },
 		-- lua
 		lua = { "stylua" },
 		-- nix
