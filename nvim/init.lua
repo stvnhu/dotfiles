@@ -6,7 +6,7 @@ require("config.autocmd")
 -- plugins
 require("plugins.indent-blankline")
 require("plugins.oil")
-require("plugins.gitsigns")
+require("plugins.neogit")
 require("plugins.blink")
 require("plugins.nvim-treesitter")
 require("plugins.mason")
