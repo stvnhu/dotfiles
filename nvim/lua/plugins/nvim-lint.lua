@@ -13,6 +13,8 @@ lint.linters_by_ft = {
 	-- c / c++
 	c = { "clangtidy" },
 	cpp = { "clangtidy" },
+	-- javascript
+	js = { "eslintd" },
 	-- json
 	json = { "jsonlint" },
 	-- lua
@@ -29,5 +31,12 @@ vim.api.nvim_create_autocmd({ "BufReadPost", "BufWritePost", "InsertLeave" }, {
 	group = augroup,
 	callback = function()
 		lint.try_lint()
+	end,
+})
+
+vim.api.nvim_create_autocmd("VimLeavePre", {
+	group = augroup,
+	callback = function()
+		vim.fn.system("eslint_d stop")
 	end,
 })

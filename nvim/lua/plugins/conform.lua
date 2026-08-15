@@ -18,8 +18,10 @@ conform.setup({
 		-- c / c++
 		c = { "clang-format" },
 		cpp = { "clang-format" },
+		-- javascript
+		js = { "prettierd" },
 		-- json
-		json = { "prettier" },
+		json = { "prettierd" },
 		-- lua
 		lua = { "stylua" },
 		-- nix
@@ -27,4 +29,13 @@ conform.setup({
 		-- python
 		python = { "ruff_format" },
 	},
+})
+
+local augroup = vim.api.nvim_create_augroup("UserConfig", {})
+
+vim.api.nvim_create_autocmd("VimLeavePre", {
+	group = augroup,
+	callback = function()
+		vim.fn.system("prettierd stop")
+	end,
 })
