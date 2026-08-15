@@ -30,6 +30,13 @@ mason_installer.setup({
 		-- c / c++
 		"clangd",
 		"clang-format",
+		-- css
+		"css-lsp",
+		"stylelint",
+		"prettierd",
+		-- html
+		"html-lsp",
+		"prettierd",
 		-- javascript
 		"typescript-language-server",
 		"eslint_d",

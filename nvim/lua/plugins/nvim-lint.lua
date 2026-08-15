@@ -13,6 +13,8 @@ lint.linters_by_ft = {
 	-- c / c++
 	c = { "clangtidy" },
 	cpp = { "clangtidy" },
+	-- css
+	css = { "stylelint" },
 	-- javascript
 	js = { "eslintd" },
 	-- json

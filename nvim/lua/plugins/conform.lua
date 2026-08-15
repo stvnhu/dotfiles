@@ -18,7 +18,9 @@ conform.setup({
 		-- c / c++
 		c = { "clang-format" },
 		cpp = { "clang-format" },
-		-- javascript
+		-- html, css, javascript
+		html = { "prettierd" },
+		css = { "prettierd" },
 		js = { "prettierd" },
 		-- json
 		json = { "prettierd" },
