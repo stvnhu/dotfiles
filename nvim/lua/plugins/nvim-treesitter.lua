@@ -9,6 +9,8 @@ end
 treesitter.install({
 	"bash",
 	"cpp",
+	"javascript",
+	"json",
 	"nix",
 	"python",
 })
