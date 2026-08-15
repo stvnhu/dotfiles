@@ -28,6 +28,8 @@ conform.setup({
 		nix = { "nixfmt" },
 		-- python
 		python = { "ruff_format" },
+		-- toml
+		toml = { "taplo" },
 	},
 })
 

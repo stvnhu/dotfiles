@@ -13,4 +13,5 @@ treesitter.install({
 	"json",
 	"nix",
 	"python",
+	"toml",
 })

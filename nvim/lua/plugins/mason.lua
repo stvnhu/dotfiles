@@ -49,6 +49,8 @@ mason_installer.setup({
 		-- python
 		"basedpyright",
 		"ruff",
+		-- toml
+		"taplo",
 	},
 })
 
