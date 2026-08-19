@@ -4,6 +4,8 @@ require("config.keymap")
 require("config.autocmd")
 
 -- plugins
+require("plugins.fidget")
+require("plugins.toggleterm")
 require("plugins.indent-blankline")
 require("plugins.oil")
 require("plugins.neogit")
