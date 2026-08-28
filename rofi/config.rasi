@@ -1,0 +1,12 @@
+
+@theme "catppuccin-default"
+
+configuration {
+    font: "JetBrainsMonoNL Nerd Font 16";
+    sidebar-mode: true;
+
+    kb-row-up: "Alt+k";
+    kb-row-down: "Alt+j";
+    kb-mode-next: "Alt+l";
+    kb-mode-previous: "Alt+h";
+}
