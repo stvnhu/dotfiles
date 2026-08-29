@@ -13,6 +13,9 @@ set $i3dir ~/dotfiles/i3
 # Sets background with feh
 exec_always --no-startup-id feh --bg-fill $i3dir/wallpaper.png
 
+# Launch dunst
+exec_always --no-startup-id dunst
+
 # Screenshots with maim into clipboard
 bindsym Print exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
 

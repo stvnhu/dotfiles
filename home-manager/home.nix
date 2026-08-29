@@ -25,5 +25,6 @@ in
     "nvim".source = symlink "${dotfiles}/nvim";
     "Code/User/settings.json".source = symlink "${dotfiles}/vscode/settings.json";
     "rofi".source = symlink "${dotfiles}/rofi";
+    "dunst".source = symlink "${dotfiles}/dunst";
   };
 }
