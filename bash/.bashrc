@@ -32,9 +32,9 @@ PS1="\[\033[1;37m\][\[\033[1;32m\]\u\[\033[1;34m\]@\h \[\033[1;33m\]\w\$(get_git
 
 # Binds
 bind 'set completion-ignore-case on'
-bind 'Tab: menu-complete'
+bind '"\t": menu-complete'
 bind '"\e[Z": menu-complete-backward'
-bind '"\e\e": ""'
+bind -r '\e\e'
 fzf_history_sync() {
     history -c
     history -r
