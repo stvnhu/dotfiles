@@ -19,6 +19,13 @@ vim.opt.updatetime = 250
 vim.opt.timeoutlen = 250
 vim.opt.confirm = true
 
+vim.opt.diffopt:append({
+	"filler",
+	"linematch:60",
+	"algorithm:patience",
+	"inline:char",
+})
+
 vim.diagnostic.config({
 	severity_sort = true,
 	virtual_text = true,

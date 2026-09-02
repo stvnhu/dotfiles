@@ -1,11 +1,11 @@
-vim.pack.add({
-	{ src = "https://github.com/saghen/blink.lib" },
-	{ src = "https://github.com/saghen/blink.cmp" },
-})
-
-local success1, blink = pcall(require, "blink.cmp")
-if not success1 then
-	return
-end
-blink.build():pwait()
-blink.setup()
+return {
+	"saghen/blink.cmp",
+	dependencies = {
+		"saghen/blink.lib",
+		"rafamadriz/friendly-snippets",
+	},
+	build = function()
+		require("blink.cmp").build():pwait()
+	end,
+	opts = {},
+}
