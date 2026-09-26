@@ -47,4 +47,4 @@ alias ls='ls --color'
 alias grep='grep --color'
 
 # Shell scripts
-source ~/bin/bookmark.sh
+source "$HOME/dotfiles/bash/bookmark.sh"
