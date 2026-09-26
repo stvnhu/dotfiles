@@ -22,7 +22,7 @@ eval "$(fzf --bash)"
 # Prompt
 get_git_branch() {
     local branch
-    branch=$(git branch --show-current 2>/dev/null)
+    branch="$(git branch --show-current 2>/dev/null)"
     if [ -n "$branch" ]; then
         echo -e "\001\033[1;31m\002(\001\033[1;34m\002$branch\001\033[1;31m\002)"
     fi
