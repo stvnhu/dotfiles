@@ -5,8 +5,8 @@ configuration {
     font: "JetBrainsMonoNL Nerd Font 16";
     sidebar-mode: true;
 
-    kb-row-up: "Alt+k";
-    kb-row-down: "Alt+j";
-    kb-mode-next: "Alt+l";
-    kb-mode-previous: "Alt+h";
+    kb-row-up: "Super+k";
+    kb-row-down: "Super+j";
+    kb-mode-next: "Super+l";
+    kb-mode-previous: "Super+h";
 }
