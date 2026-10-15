@@ -21,9 +21,9 @@ bindsym Print exec --no-startup-id maim -s | xclip -selection clipboard -t image
 
 # Push to talk
 exec_always --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ 1
-bindsym $mod+backslash exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ 0 && paplay $i3dir/ptt-keydown.mp3
-bindsym --release $mod+backslash exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ 1 && paplay $i3dir/ptt-keyup.mp3
-bindsym --release backslash exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ 1 && paplay $i3dir/ptt-keyup.mp3
+# bindsym $mod+backslash exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ 0 && paplay $i3dir/ptt-keydown.mp3
+# bindsym --release $mod+backslash exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ 1 && paplay $i3dir/ptt-keyup.mp3
+# bindsym --release backslash exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ 1 && paplay $i3dir/ptt-keyup.mp3
 
 # Mute button
 bindsym $mod+m exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
