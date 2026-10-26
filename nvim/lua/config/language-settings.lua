@@ -4,6 +4,7 @@ return {
 		"bash",
 		"javascript",
 		"nix",
+		"luau",
 	},
 	ensure_installed = {
 		"lua-language-server",
@@ -15,6 +16,8 @@ return {
 		"prettier",
 		"nil",
 		"nixfmt",
+		"clangd",
+		"clang-format",
 	},
 	formatters_by_ft = {
 		lua = { "stylua" },
@@ -22,5 +25,6 @@ return {
 		bash = { "shfmt" },
 		js = { "prettier" },
 		nix = { "nixfmt" },
+		c = { "clang-format" },
 	},
 }
