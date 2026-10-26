@@ -1,3 +1,4 @@
+-- opts
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes"
@@ -20,13 +21,25 @@ vim.opt.timeoutlen = 250
 vim.opt.confirm = true
 
 vim.opt.diffopt:append({
-	"filler",
 	"linematch:60",
 	"algorithm:patience",
-	"inline:char",
 })
 
 vim.diagnostic.config({
 	severity_sort = true,
 	virtual_text = true,
+})
+
+-- keymaps
+vim.keymap.set("n", "<esc>", "<cmd>nohlsearch<cr>", { desc = "Clear search highlights" })
+
+-- autocmds
+local augroup = vim.api.nvim_create_augroup("UserConfig", {})
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "Highlight when yanking text",
+	group = augroup,
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })
