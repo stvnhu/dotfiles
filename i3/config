@@ -1,31 +1,19 @@
 
 # dependencies
-# i3, i3status-rust, rofi, alacritty, feh
-# maim, xclip
+# i3, i3status-rust, alacritty, rofi, feh, dunst, maim, xclip
 # JetBrainsMonoNL font
 
 set $mod Mod4
 
-# Added config
-
-set $i3dir ~/dotfiles/i3
-
-# Sets background with feh
-exec_always --no-startup-id feh --bg-fill $i3dir/wallpaper.png
-
-# Launch dunst
+# External Programs
+bindsym $mod+Return exec alacritty
+bindsym $mod+d exec --no-startup-id "rofi -show drun"
+exec_always --no-startup-id feh --bg-fill ~/dotfiles/i3/wallpaper.png
 exec_always --no-startup-id dunst
-
-# Screenshots with maim into clipboard
 bindsym Print exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
 
-# Push to talk
+# Microphone
 exec_always --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ 1
-# bindsym $mod+backslash exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ 0 && paplay $i3dir/ptt-keydown.mp3
-# bindsym --release $mod+backslash exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ 1 && paplay $i3dir/ptt-keyup.mp3
-# bindsym --release backslash exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ 1 && paplay $i3dir/ptt-keyup.mp3
-
-# Mute button
 bindsym $mod+m exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # Disable screen timeout
@@ -33,28 +21,29 @@ exec_always --no-startup-id xset s off
 exec_always --no-startup-id xset -dpms
 exec_always --no-startup-id xset s noblank
 
+# i3
+font pango:JetBrainsMonoNL Nerd Font 12
+for_window [class=".*"] floating enable
 workspace_layout tabbed
 hide_edge_borders both
-
-
-# Default config
-
-font pango:JetBrainsMonoNL Nerd Font 12
+floating_modifier $mod
+tiling_drag modifier titlebar
 
 exec --no-startup-id dex --autostart --environment i3
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
-
-floating_modifier $mod
-
-tiling_drag modifier titlebar
-
-bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec --no-startup-id "rofi -show drun"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+c reload
+
+bindsym $mod+r mode "resize"
+bindsym $mod+f fullscreen toggle
+
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -66,14 +55,6 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-bindsym $mod+f fullscreen toggle
-
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+space focus mode_toggle
-
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -83,7 +64,6 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
 
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -94,7 +74,6 @@ bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
 
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
@@ -105,24 +84,17 @@ bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
-
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 mode "resize" {
-  bindsym h resize shrink width 10 px or 10 ppt
-  bindsym j resize grow height 10 px or 10 ppt
-  bindsym k resize shrink height 10 px or 10 ppt
-  bindsym l resize grow width 10 px or 10 ppt
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
 
-  bindsym Escape mode "default"
-  bindsym $mod+r mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
-
 bar {
-  status_command i3status-rs
+    status_command i3status-rs
 }
