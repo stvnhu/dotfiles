@@ -5,6 +5,7 @@ return {
 		"javascript",
 		"nix",
 		"luau",
+		"python",
 	},
 	ensure_installed = {
 		"lua-language-server",
@@ -18,6 +19,8 @@ return {
 		"nixfmt",
 		"clangd",
 		"clang-format",
+		"basedpyright",
+		"ruff",
 	},
 	formatters_by_ft = {
 		lua = { "stylua" },
@@ -26,5 +29,6 @@ return {
 		js = { "prettier" },
 		nix = { "nixfmt" },
 		c = { "clang-format" },
+		python = { "ruff_format", "ruff_fix" },
 	},
 }
