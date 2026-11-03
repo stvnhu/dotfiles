@@ -4,9 +4,4 @@
 configuration {
     font: "JetBrainsMonoNL Nerd Font 16";
     sidebar-mode: true;
-
-    kb-row-up: "Super+k";
-    kb-row-down: "Super+j";
-    kb-mode-next: "Super+l";
-    kb-mode-previous: "Super+h";
 }
