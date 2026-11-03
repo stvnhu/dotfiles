@@ -13,11 +13,8 @@ show_volume_when_muted = true
 
 [[block]]
 block = "net"
-format = " {$ipv6|<span foreground='#dc322f'>ipv6</span>} "
-
-[[block]]
-block = "net"
-format = " {$ip|<span foreground='#dc322f'>ipv4</span>} "
+format = " $icon: $ip "
+inactive_format = " <span foreground='#dc322f'>$icon: down</span> "
 
 [[block]]
 block = "battery"
