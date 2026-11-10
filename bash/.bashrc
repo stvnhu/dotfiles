@@ -1,19 +1,17 @@
 #!/usr/bin/bash
 
-# Check if shell is interactive
-case $- in
-*i*) ;;
-*) return ;;
-esac
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
 
 # Shell options
 shopt -s histappend
 
 # Environment variables
-HISTSIZE=10000
-HISTFILESIZE=10000
-PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
-export FZF_DEFAULT_OPTS='--reverse --cycle --bind tab:down,shift-tab:up'
+HISTSIZE=1024
+HISTFILESIZE=1024
+PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+export FZF_DEFAULT_OPTS='--reverse --cycle'
+export PATH="$HOME/dotfiles/bash/bash_scripts/:$PATH"
 
 # Plugins
 eval "$(zoxide init bash)"
@@ -23,7 +21,7 @@ eval "$(fzf --bash)"
 get_git_branch() {
     local branch
     branch="$(git branch --show-current 2>/dev/null)"
-    if [ -n "$branch" ]; then
+    if [[ -n "$branch" ]]; then
         echo -e "\001\033[1;31m\002(\001\033[1;34m\002$branch\001\033[1;31m\002)"
     fi
 }
@@ -35,16 +33,13 @@ bind 'set completion-ignore-case on'
 bind '"\t": menu-complete'
 bind '"\e[Z": menu-complete-backward'
 bind -r '\e\e'
-fzf_history_sync() {
+__fzf_history_sync__() {
     history -c
     history -r
     __fzf_history__
 }
-bind -x '"\C-r": fzf_history_sync'
+bind -x '"\C-r": __fzf_history_sync__'
 
 # Aliases
 alias ls='ls --color'
 alias grep='grep --color'
-
-# Shell scripts
-source "$HOME/dotfiles/bash/bookmark.sh"
