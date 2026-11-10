@@ -1,3 +1,5 @@
+-- NOTE: unused
+
 return {
 	"catppuccin/nvim",
 	name = "catppuccin",
